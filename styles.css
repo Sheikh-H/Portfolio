@@ -1,0 +1,420 @@
+/* These are all the universal classes */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+font-family: 'Nunito', sans-serif;
+display:flex;
+flex-direction: column;
+margin: 10px 50px;
+}
+
+* h1{
+font-size: 3rem;
+color: #333;
+font-family: 'Madimi One', sans-serif;
+}
+
+* p{
+font-size: 2rem;
+color: #555;
+}
+
+section{
+padding:25px;
+height: 100vh;
+align-content: center;
+}
+
+.fullspace{
+height:100vh;
+}
+
+.halfspace{
+height:50vh;
+}
+
+/* This is for the background video */
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.6); 
+z-index: -1; 
+}
+
+.BackgroundVideo {
+position: fixed;
+right: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 100%;
+z-index: -2; 
+}
+
+/* Intro section */
+
+header{
+max-width: 100%;
+height: 150px;
+border-radius: 100px;
+background-color: rgba(255, 255, 255, 1);
+display: flex;
+align-items: center;
+justify-content: space-between;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+animation: expandHeader 2s ease-out forwards;
+width: 100%;
+padding:5px;
+margin: 0 auto;
+}
+
+.headerdiv1, 
+.headerdiv2{
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+align-content: center;
+gap:10px;
+opacity: 0;
+transition: opacity 1s ease-in;
+}
+
+.headerdiv1 img{
+width:140px;
+border-radius: 50%;
+}
+
+.headerdiv2 nav{
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 1.5rem;
+padding: 0 10px;
+
+}
+
+.headerdiv2 ul {
+list-style-type: none;
+}
+
+.headerdiv2 li{
+display: inline-block;
+align-items: center;
+margin: 5px;
+}
+
+.headerdiv2 a{
+text-decoration: none;
+color:#333;
+}
+
+.headerdiv2 a:hover{
+color:#555;
+}
+
+header.expanded .headerdiv1,
+header.expanded .headerdiv2 {
+opacity: 1;
+}
+
+
+@keyframes expandHeader {
+  0% {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    top: 20px;
+  }
+  
+  100% {
+    width: 100%;
+    height: 150px;
+    border-radius: 100px;
+  }
+}
+
+
+.IntroDiv {
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position:absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width:80%;
+}
+
+.InnerIntroDiv {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.TypingClass {
+border-right: 1px solid black;
+animation: typing 2s steps(7, end) forwards, blink 0.7s step-end 3s infinite;
+animation-delay: 2s;
+white-space: nowrap;
+width: 0;
+opacity:0;
+overflow: hidden;
+font-size: 70px;
+}
+
+.fadeinclass{
+animation: fade-in 3s ease-in-out 5s forwards;
+opacity:0;
+font-size: 50px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* This is for the word typing */
+@keyframes typing {
+  from { 
+    width:0;
+  }
+  to { 
+    width:7ch;
+    opacity:1;
+  }
+}
+
+/* This is for the cursor style blink */
+@keyframes blink {
+  50% { 
+    border-color: transparent; 
+  }
+}
+
+
+/* Section 1 */
+.sectionstyle1{
+background-color: rgba(255, 255, 255, 0.3);
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+display: flex;
+gap: 100px;
+justify-content: center;
+align-items: center;
+padding: 25px;
+}
+
+.quotes1{
+  justify-content: center;
+  width:100%;
+  font-size: 4rem;
+  text-align: start;
+}
+
+.quotes2{
+  justify-content: center;
+  width:100%;
+  font-size: 4rem;
+  text-align: end;
+}
+
+
+/* Section 2 */
+.sectionstyle2{
+background-color: rgba(255, 255, 255, 0.3);
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+display: grid;
+padding: 25px;
+text-align: center;
+}
+
+.education{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 25px auto;
+  text-align: start;
+  gap: 50px;
+}
+
+.educationcontent h3{
+  font-size: 2rem;
+}
+.educationcontent p{
+  font-size: 1.5rem;
+}
+
+/* Section 3 */
+
+.sectionstyle3{
+background-color: rgba(255, 255, 255, 0.3);
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+display: grid;
+padding: 25px;
+text-align: center;
+}
+
+.sectionstyle3 h2{
+  font-size: 2rem;
+}
+
+.projects{
+  display:flex;
+  grid-template-rows: repeat (4, 1fr);
+  width: 100%;
+  justify-content: space-around;
+  margin: 50px auto;
+}
+
+.projecta{
+  width:250px;
+  box-shadow: 0 0 5px 5px lightgrey;
+  justify-content: center;
+  text-align: center;
+  border-radius: 30px;
+  padding:25px;
+  animation: hovering 3s ease-in-out forwards infinite;
+  height: 200px;
+}
+
+.projectb{
+  width:250px;
+  box-shadow: 0 0 5px 5px lightgrey;
+  justify-content: center;
+  text-align: center;
+  border-radius: 30px;
+  padding:25px;
+  height:200px;
+  animation: hovering 2s ease-in-out forwards infinite;
+}
+
+.projecta img, 
+.projectb img{
+  width: 100px;
+}
+
+.projecta h3, 
+.projectb h3{
+  font-size: 1.5rem;
+}
+.projecta a, 
+.projectb a {
+  display:none;
+}
+
+.projecta:hover a, 
+.projectb:hover a{
+  display:block;
+font-size: 1rem;
+}
+
+@keyframes hovering {
+  0% {
+transform: translateY(10%);
+  }
+
+  50%{
+transform: translateY(0%);
+  }
+
+  100%{
+transform: translateY(10%);
+  }
+}
+
+/* Footer section */
+
+footer{
+  position: relative;
+  bottom:0;
+  height: 300px;
+  background-color: white;
+  width:100%;
+  text-align: center;
+}
+
+footer h2{
+  font-size: 4rem;
+}
+
+.footergrid{
+  display:grid;
+  flex-direction: column;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 5rem;
+  margin: 50px auto;
+}
+
+.icon1 a:hover{
+  color:green;
+}
+
+.icon1 .hovered {
+display: none;
+color:green;
+}
+
+.icon1:hover .default {
+display: none;
+}
+
+.icon1:hover .hovered {
+  display: inline; /* Show hover icon on hover */
+  color:green;
+}
+
+.icon2 a{
+  color: black;
+}
+
+.icon2 a:hover {
+  color: green;
+}
+
+
+/* Python Page */
+
+.introdiv{
+  display:grid;
+  width: 100%;
+  text-align:center;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+/* One for tablets */
+@media (max-width:  1000px) {
+    * h1{
+        font-size: 2rem;
+    }
+    * p {
+        font-size: 1.5rem;
+    }
+    body{
+      margin: 30px 10px;
+    }
+}
+
+/* One for mobile */
+@media (max-width: 768px) {
+    * h1{
+        font-size: 2rem;
+    }
+    * p {
+        font-size: 1.5rem;
+    }
+    body{
+      margin: 30px 10px;
+    }
+}
